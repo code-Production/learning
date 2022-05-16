@@ -33,13 +33,14 @@ public class HomeWorkApp_3 {
         System.out.println(map);
 
         PhoneBook book = new PhoneBook();
-        book.add("Gusev", "8(800)111-22-33");
-        book.add("Gusev", "8(800)222-22-33");
-        book.add("Gusev", "8(800)222-22-33"); //duplicate -> error
-        book.add("Vatrushkin", "8(800)111-11-11");
-        book.add("Vatrushkin", "8(800)222-22-22");
-        book.add("Lavochkin", "8(800)000-00-00");
-        book.get("Gusev");
+        System.out.println(book.add("Gusev", "8(800)111-22-33"));
+        System.out.println(book.add("Gusev", "8(800)222-22-33"));
+        System.out.println(book.add("Gusev", "8(800)222-22-33")); //duplicate -> skipped
+        System.out.println(book.add("Vatrushkin", "8(800)111-11-11"));
+        System.out.println(book.add("Vatrushkin", "8(800)222-22-22"));
+        System.out.println(book.add("Lavochkin", "8(800)000-00-00"));
+        System.out.println(book.get("Gusev"));
+        System.out.println(book.get("Gusev1")); //null
     }
 
 }

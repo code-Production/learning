@@ -1,29 +1,29 @@
 package ru.geekbrains.java_core_2.lesson_3;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.BiConsumer;
 
 public class PhoneBook {
-    private final Map<String, String> phoneBook = new HashMap<>();
+    private final Map<String, ArrayList<String>> phoneBook = new HashMap<>();
 
-    public void add(String lastName, String phoneNumber) {
-        if (phoneBook.containsKey(phoneNumber)) {
-            System.out.println("Record with this phone number already exists. Operation is not complete.");
+    public boolean add(String lastName, String phoneNumber) {
+        if (phoneBook.containsKey(lastName)) {
+            ArrayList<String> phoneArr = phoneBook.get(lastName);
+            if (!phoneArr.contains(phoneNumber)) {
+                phoneArr.add(phoneNumber);
+                return true;
+            }
         } else {
-            phoneBook.put(phoneNumber, lastName);
-            System.out.println("Record is successfully added.");
+            ArrayList<String> tempArr = new ArrayList<>();
+            tempArr.add(phoneNumber);
+            phoneBook.put(lastName, tempArr);
+            return true;
         }
+        return false;
     }
 
-    public void get(String lastName) {
-        phoneBook.forEach(new BiConsumer<String, String>() {
-            @Override
-            public void accept(String s, String s2) {
-                if (s2.equals(lastName)) {
-                    System.out.println(lastName + ": " + s);
-                }
-            }
-        });
+    public ArrayList<String> get(String lastName) {
+        return phoneBook.get(lastName); // null if not found
     }
 }
