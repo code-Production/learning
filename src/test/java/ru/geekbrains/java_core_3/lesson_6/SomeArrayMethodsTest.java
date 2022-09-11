@@ -32,10 +32,10 @@ class SomeArrayMethodsTest {
 
     public static Stream<Arguments> dataForReturnAfterFour() {
         List<Arguments> tests = new ArrayList<>();
-        tests.add(Arguments.arguments(new int[] {1,2,3,4,5,6}, new int[] {4,5,6}));
-        tests.add(Arguments.arguments(new int[] {6,5,4,3,2,1}, new int[] {4,3,2,1}));
-        tests.add(Arguments.arguments(new int[] {4,2,3,4,5,4,3,4}, new int[] {4}));
-        tests.add(Arguments.arguments(new int[] {4,9,8,7,6,5,3,2,1}, new int[] {4,9,8,7,6,5,3,2,1}));
+        tests.add(Arguments.arguments(new int[] {1,2,3,4,5,6}, new int[] {5,6}));
+        tests.add(Arguments.arguments(new int[] {6,5,4,3,2,1}, new int[] {3,2,1}));
+        tests.add(Arguments.arguments(new int[] {4,2,3,4,5,4,3,4}, new int[] {}));
+        tests.add(Arguments.arguments(new int[] {4,9,8,7,6,5,3,2,1}, new int[] {9,8,7,6,5,3,2,1}));
         return tests.stream();
     }
 

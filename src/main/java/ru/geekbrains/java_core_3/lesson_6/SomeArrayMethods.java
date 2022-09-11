@@ -8,7 +8,7 @@ public class SomeArrayMethods {
         int length = sourceArr.length;
             for (int i = length - 1; i >= 0 ; i--) {
                 if (sourceArr[i] == 4) {
-                    return Arrays.copyOfRange(sourceArr, i, length);
+                    return Arrays.copyOfRange(sourceArr, i + 1, length);
                 }
             }
         throw new RuntimeException("Array must contain at least one number 4 -> " + Arrays.toString(sourceArr));
