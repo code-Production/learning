@@ -53,6 +53,8 @@ class SomeArrayMethodsTest {
         tests.add(Arguments.arguments(new int[] {1,2,3,5,6,7,8,9,0}, false));
         tests.add(Arguments.arguments(new int[] {2,3,5,6,7,8,9,0}, false));
         tests.add(Arguments.arguments(new int[] {1,2,3,4,5,6,7,8,9,0}, true));
+        tests.add(Arguments.arguments(new int[] {4,8,4,6,1,3,6,5,4,9,8,7,1}, true));
+        tests.add(Arguments.arguments(new int[] {4,8,4,6,3,6,5,4,9,8,7}, false));
         return tests.stream();
     }
 }
